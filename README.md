@@ -3,7 +3,8 @@
 ## Todos
 
 - [x] typescript
-- [ ] css modules
+- [x] css modules
+- [x] sass
 - [ ] exerices table
 - [ ] github actions
 - [ ] draggable
