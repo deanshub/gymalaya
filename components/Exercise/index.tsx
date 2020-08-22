@@ -1,1 +1,1 @@
-export { Exercise } from "./Exercise";
+export { Exercise } from './Exercise'

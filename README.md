@@ -6,8 +6,10 @@
 - [x] css modules
 - [x] sass
 - [x] exerices table
-- [ ] prettier
+- [x] prettier
 - [ ] github actions
 - [ ] draggable
+- [ ] Responsive
+- [ ] PWA
 - [ ] login
 - [ ] db
