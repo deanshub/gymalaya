@@ -1,0 +1,20 @@
+.table{
+  border: 2px solid white;
+  border-collapse: collapse;
+  margin: 2%;
+  width: 90%;
+
+  thead{
+    tr>th{
+      border: 2px solid white;
+      padding: 0.5em;
+      text-transform: capitalize;
+    }
+  }
+
+  tbody {
+    tr:nth-child(odd){
+      background-color: #2f2f2f;
+    }
+  }
+}

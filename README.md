@@ -5,7 +5,8 @@
 - [x] typescript
 - [x] css modules
 - [x] sass
-- [ ] exerices table
+- [x] exerices table
+- [ ] prettier
 - [ ] github actions
 - [ ] draggable
 - [ ] login
