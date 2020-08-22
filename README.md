@@ -7,9 +7,9 @@
 - [x] sass
 - [x] exerices table
 - [x] prettier
-- [ ] github actions
+- [x] Responsive
 - [ ] draggable
-- [ ] Responsive
 - [ ] PWA
+- [ ] github actions
 - [ ] login
 - [ ] db

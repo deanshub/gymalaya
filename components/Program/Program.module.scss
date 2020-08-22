@@ -2,7 +2,8 @@
   border: 2px solid white;
   border-collapse: collapse;
   margin: 2%;
-  width: 90%;
+  width: 95%;
+  height: 95vh;
 
   thead{
     tr>th{
@@ -11,6 +12,7 @@
       text-transform: capitalize;
     }
   }
+
 
   tbody {
     tr:nth-child(odd){

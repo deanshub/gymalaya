@@ -1,3 +1,4 @@
+import styles from './Exercise.module.scss'
 // function Group({ group, exercises, name, weight, even = false }) {
 //   return (
 //     <>
@@ -23,12 +24,12 @@ export function Exercise({
     sets = 1,
 }) {
     return (
-        <tr className={even ? 'evenGroup' : 'oddGroup'}>
-            <td>{group}</td>
-            <td>{name}</td>
-            <td>{`${reps}`}</td>
-            <td>{`${sets}`}</td>
-            <td>{`${weight}`}Kg</td>
+        <tr className={styles.row}>
+            <td className={styles.capitalize}>{group}</td>
+            <td className={styles.capitalize}>{name}</td>
+            <td className={styles.centerText}>{`${reps}`}</td>
+            <td className={styles.centerText}>{`${sets}`}</td>
+            <td className={styles.centerText}>{`${weight}`}Kg</td>
         </tr>
     )
 }
