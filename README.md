@@ -2,7 +2,7 @@
 
 ## Todos
 
-- [ ] typescript
+- [x] typescript
 - [ ] css modules
 - [ ] exerices table
 - [ ] github actions
