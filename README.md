@@ -8,7 +8,7 @@
 - [x] exerices table
 - [x] prettier
 - [x] Responsive
-- [ ] draggable
+- [x] draggable
 - [ ] PWA
 - [ ] github actions
 - [ ] login
