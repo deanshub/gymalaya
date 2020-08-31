@@ -22,6 +22,30 @@ export default function Home({ plan }: { plan: Plan }) {
             <Head>
                 <title>Gymalaya</title>
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="manifest" href="manifest.json" />
+
+                <link rel="icon" sizes="16X16" href="/favicon.ico" />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="16X16"
+                    href="/favicon.ico"
+                />
+
+                <meta name="mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="application-name" content="Gymalaya" />
+                <meta name="apple-mobile-web-app-title" content="Gymalaya" />
+                <meta name="theme-color" content="#f32121" />
+                <meta name="msapplication-navbutton-color" content="#f32121" />
+                <meta
+                    name="apple-mobile-web-app-status-bar-style"
+                    content="black-translucent"
+                />
+                <meta name="msapplication-starturl" content="/" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+                />
             </Head>
 
             {plan.map((program, index) => {

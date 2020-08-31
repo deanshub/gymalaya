@@ -1,0 +1,14 @@
+{
+    "name": "Gymalaya",
+    "lang": "en-US",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#f32121",
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "16X16"
+        }
+    ],
+    "background_color": "#000"
+}
