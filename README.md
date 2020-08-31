@@ -9,6 +9,7 @@
 - [x] prettier
 - [x] Responsive
 - [x] draggable
+- [x] optimistic update
 - [ ] PWA
 - [ ] github actions
 - [ ] login

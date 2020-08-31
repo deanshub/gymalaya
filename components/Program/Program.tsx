@@ -1,4 +1,4 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import styles from './Program.module.scss'
 import { Exercise } from '../Exercise'
 import {
@@ -11,7 +11,8 @@ import { Exercise as ExerciseType } from '../../data/plan'
 import { fetcher } from '../../apiRouter/fetcher'
 
 export function Program({ name, exercises, index }) {
-    const updatePlan = React.useCallback(
+    const [stateExercises, setExercises] = useState(exercises)
+    const updatePlan = useCallback(
         async (username: string, startIndex: number, endIndex: number) => {
             const changed = await fetcher('/api/plan', {
                 body: {
@@ -21,7 +22,7 @@ export function Program({ name, exercises, index }) {
                     endIndex,
                 },
             })
-            console.log(changed[index])
+            setExercises(changed[index].exercises)
         },
         [],
     )
@@ -63,7 +64,7 @@ export function Program({ name, exercises, index }) {
                             ref={provided.innerRef}
                             {...provided.droppableProps}
                         >
-                            {exercises.map(
+                            {stateExercises.map(
                                 (exercise: ExerciseType, index: number) => (
                                     <Exercise
                                         {...exercise}
