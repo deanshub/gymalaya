@@ -5,9 +5,8 @@ import { NumberFromString } from 'io-ts-types/lib/NumberFromString'
 
 export const router = {
     '/api/smoke': route({
-        body: t.strict({
-            bodyValue: t.string,
-        }),
+        method: t.string,
+        body: t.unknown,
         query: t.strict({
             queryValue: t.literal('exactly this string'),
         }),
