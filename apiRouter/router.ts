@@ -1,6 +1,6 @@
 import * as t from 'io-ts'
 import { route } from './route'
-import { plan } from '../data/plan'
+import { plan } from '../data/types'
 import { NumberFromString } from 'io-ts-types/lib/NumberFromString'
 
 export const router = {

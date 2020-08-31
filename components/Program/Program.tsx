@@ -7,14 +7,25 @@ import {
     DroppableProvided,
     DropResult,
 } from 'react-beautiful-dnd'
-import { Exercise as ExerciseType } from '../../data/plan'
+import { Exercise as ExerciseType } from '../../data/types'
 import { fetcher } from '../../apiRouter/fetcher'
+import { reorder } from '../../data/utils'
 
 export function Program({ name, exercises, index }) {
     const [stateExercises, setExercises] = useState(exercises)
     const updatePlan = useCallback(
         async (username: string, startIndex: number, endIndex: number) => {
-            const changed = await fetcher('/api/plan', {
+            console.log(stateExercises, startIndex, endIndex)
+            const optimisticExercies = reorder(
+                stateExercises,
+                startIndex,
+                endIndex,
+            )
+            console.log(optimisticExercies)
+            setExercises(optimisticExercies)
+
+            // const changed = await
+            fetcher('/api/plan', {
                 body: {
                     username,
                     program: index,
@@ -22,9 +33,9 @@ export function Program({ name, exercises, index }) {
                     endIndex,
                 },
             })
-            setExercises(changed[index].exercises)
+            // setExercises(changed[index].exercises)
         },
-        [],
+        [stateExercises],
     )
 
     function onDragEnd(result: DropResult) {

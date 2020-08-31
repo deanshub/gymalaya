@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { reorder, updatePlan, getPlan } from '../../data/utils'
+import { reorder } from '../../data/utils'
+import { updatePlan, getPlan } from '../../data/plan'
 import { serve } from '../../apiRouter/serve'
 
 async function patchPlan(

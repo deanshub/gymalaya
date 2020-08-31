@@ -1,41 +1,23 @@
-import * as t from 'io-ts'
+import path from 'path'
+import fs from 'fs-extra'
+import { Plan } from './types'
 
-export interface Exercise {
-    group: string
-    name: string
-    weight?: number
-    reps?: number
-    sets?: number
+export async function getPlan(username: string): Promise<Plan> {
+    const plan: Plan = await fs.readJson(
+        path.join(process.cwd(), `./data/${username}.json`),
+    )
+    return plan
 }
 
-export interface Program {
-    name: string
-    exercises: Exercise[]
+export async function updatePlan(username: string, plan: Plan): Promise<Plan> {
+    await fs.copy(
+        path.join(process.cwd(), `./data/${username}.json`),
+        path.join(process.cwd(), `./data/${username}.json.${Date.now()}.bkp`),
+    )
+    await fs.outputJson(
+        path.join(process.cwd(), `./data/${username}.json`),
+        plan,
+        { spaces: 2 },
+    )
+    return plan
 }
-
-export type Plan = Program[]
-
-export const exercise = t.exact(
-    t.intersection([
-        t.type({
-            group: t.string,
-            name: t.string,
-        }),
-        t.partial({
-            weight: t.number,
-            reps: t.number,
-            sets: t.number,
-        }),
-    ]),
-    'exercise',
-)
-
-export const program = t.strict(
-    {
-        name: t.string,
-        exercises: t.array(exercise),
-    },
-    'program',
-)
-
-export const plan = t.array(program, 'plan')

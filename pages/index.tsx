@@ -2,9 +2,9 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import { Program } from '../components/Program'
 import { GetStaticProps } from 'next'
-import { Plan } from '../data/plan'
+import { Plan } from '../data/types'
 import { resetServerContext } from 'react-beautiful-dnd'
-import { getPlan } from '../data/utils'
+import { getPlan } from '../data/plan'
 
 export const getStaticProps: GetStaticProps = async () => {
     const plan = await getPlan('dean')
@@ -27,7 +27,6 @@ export default function Home({ plan }: { plan: Plan }) {
             {plan.map((program, index) => {
                 return <Program {...program} key={program.name} index={index} />
             })}
-            <main className={styles.main}></main>
         </div>
     )
 }
